@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Object</h1>
+
+    <h2>Create</h2>
+    <script>
+        /* 객체 생성 */
+        var coworkers = {
+            "programmer":"egoing",
+            "designer":"leezche"
+        };
+
+        /* 객체 접근 */
+        document.write("programmer: " + coworkers.programmer + "<br>");
+        document.write("designer: " + coworkers.designer + "<br>");
+
+
+        /* 객체 추가 */
+        coworkers.bookkeeper = "duru";
+        document.write("bookkeeper: " + coworkers.bookkeeper + "<br>");
+
+        coworkers["data scientist"] = "taeho"; /* key 값에 띄어쓰기가 있는 경우 */
+        document.write("data scientist: " + coworkers["data scientist"] + "<br>");
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+        /* 객체 순회 */
+        for(var key in coworkers){
+            document.write(key + ' : '  + coworkers[key] + '<br>');
+        }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+        /* 함수 정의 */
+        coworkers.showAll = function(){
+            for(var key in this){
+                document.write(key + ' : '  + this[key] + '<br>');
+            }
+        }
+
+        /* 함수 호출 */
+        coworkers.showAll();
+    </script>
+</body>
+</html>
